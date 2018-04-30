@@ -71,6 +71,11 @@
 		<classpath refid="SeleniumDemo.classpath"/>
 	</junit>
 </target>
+<target name="MyTest">
+        <java classname="MyTest" failonerror="true" fork="yes">
+            <classpath refid="SeleniumDemo.classpath"/>
+        </java>
+  </target>
 <target depends="init" name="compile">
 	<javac destdir="bin" includeantruntime="false" source="${source}" target="${target}">
 		<src path="src.main"/>
