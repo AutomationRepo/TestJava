@@ -49,6 +49,7 @@
         <pathelement location="lib/xercesImpl-2.11.0.jar"/>
         <pathelement location="lib/xml-apis-1.4.01.jar"/>
         <pathelement location="lib/xmlbeans-2.6.0.jar"/>
+        <pathelement location="config"/>
     </path>
  <target name="init">
  	<mkdir dir="bin"/>
@@ -80,7 +81,6 @@
 	<javac destdir="bin" includeantruntime="false" source="${source}" target="${target}">
 		<src path="src.main"/>
 		<src path="src.test"/>
-		<src path="config"/>
 		<classpath refid="SeleniumDemo.classpath"/>
 	</javac>	
 </target>
