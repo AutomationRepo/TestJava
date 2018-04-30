@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="runTest" name="SeleniumDemo" >
 <property name="junit.output.dir" value="Reports"/>
+<property name="target" value="1.8"/>
+  <property name="source" value="1.8"/>
 <path id="SeleniumDemo.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/cglib-nodep-3.2.4.jar"/>
@@ -63,24 +65,25 @@
  </target>
 <target depends="compile" name="runTest">
 	<mkdir dir="${junit.output.dir}"/>
-	<junit fork="yes" printsummary="withOutAndErr">
+	<junit fork="yes">
 		<test name="hotel.regression.HomePageTests" />
 		<classpath refid="SeleniumDemo.classpath"/>
 	</junit>
 </target>
 <target depends="init" name="compile">
-	<javac destdir="bin" includeantruntime="false">
+	<javac destdir="bin" includeantruntime="false" source="${source}" target="${target}">
 		<src path="src.main"/>
 		<src path="src.test"/>
 		<classpath refid="SeleniumDemo.classpath"/>
-	</javac>
+	</javac>	
 </target>
 <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
+        <junitreport todir="${junit.output.dir}">         
+        	<fileset dir="${junit.output.dir}">
                 <include name="TEST-*.xml"/>
             </fileset>
             <report format="frames" todir="${junit.output.dir}"/>
         </junitreport>
-</target>
+ </target>
+
 </project>
