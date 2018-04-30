@@ -80,6 +80,7 @@
 	<javac destdir="bin" includeantruntime="false" source="${source}" target="${target}">
 		<src path="src.main"/>
 		<src path="src.test"/>
+		<src path="config"/>
 		<classpath refid="SeleniumDemo.classpath"/>
 	</javac>	
 </target>
