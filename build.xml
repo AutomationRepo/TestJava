@@ -65,7 +65,7 @@
  </target>
 <target depends="compile" name="runTest">
 	<mkdir dir="${junit.output.dir}"/>
-	<junit fork="yes">
+	<junit printsummary="withOutAndErr">
 		<test name="hotel.regression.HomePageTests" />
 		<jvmarg line="-ea"/>
 		<classpath refid="SeleniumDemo.classpath"/>
