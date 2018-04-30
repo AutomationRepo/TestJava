@@ -74,6 +74,7 @@
 		<src path="src.test"/>
 		<classpath refid="SeleniumDemo.classpath"/>
 	</javac>
+</target>
 <target name="junitreport">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
@@ -81,6 +82,5 @@
             </fileset>
             <report format="frames" todir="${junit.output.dir}"/>
         </junitreport>
-    </target>
 </target>
 </project>
