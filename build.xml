@@ -63,8 +63,8 @@
  </target>
 <target depends="compile" name="runTest">
 	<mkdir dir="${junit.output.dir}"/>
-	<junit>
-		<test name="hotel.regression.HomePageTests" todir="${junit.output.dir}"/>
+	<junit fork="yes" printsummary="withOutAndErr">
+		<test name="hotel.regression.HomePageTests" />
 		<classpath refid="SeleniumDemo.classpath"/>
 	</junit>
 </target>
