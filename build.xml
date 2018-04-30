@@ -62,6 +62,11 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
+        <copy includeemptydirs="false" todir="bin">
+    	            <fileset dir="config">
+    	                <exclude name="**/*.java"/>
+    	            </fileset>
+    	  </copy>
  </target>
 <target depends="compile" name="runTest">
 	<mkdir dir="${junit.output.dir}"/>
