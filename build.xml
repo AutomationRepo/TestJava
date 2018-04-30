@@ -1,16 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="SeleniumDemo">
-    <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../eclipse-jee-neon-2-win32-x86_64/eclipse/"/>
-    <property name="junit.output.dir" value="junit"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="SeleniumDemo.classpath">
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="runTest" name="SeleniumDemo">
+<property name="junit.output.dir" value="Reports"/>
+<path id="SeleniumDemo.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/cglib-nodep-3.2.4.jar"/>
         <pathelement location="lib/client-combined-3.0.1-nodeps.jar"/>
@@ -57,9 +48,9 @@
         <pathelement location="lib/xml-apis-1.4.01.jar"/>
         <pathelement location="lib/xmlbeans-2.6.0.jar"/>
     </path>
-    <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
+ <target name="init">
+ 	<mkdir dir="bin"/>
+ 	<copy includeemptydirs="false" todir="bin">
             <fileset dir="src.main">
                 <exclude name="**/*.java"/>
             </fileset>
@@ -69,59 +60,21 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
-    </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src.main"/>
-            <src path="src.test"/>
-            <classpath refid="SeleniumDemo.classpath"/>
-        </javac>
-    </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="HomePageTests">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="hotel.regression.HomePageTests" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="SeleniumDemo.classpath"/>
-        </junit>
-    </target>
-    <target name="MyTest">
-        <java classname="MyTest" failonerror="true" fork="yes">
-            <classpath refid="SeleniumDemo.classpath"/>
-        </java>
-    </target>
-    <target name="SeleniumDemo">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="hotel.regression.HomePageTests" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="SeleniumDemo.classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
+ </target>
+<target depends="compile" name="runTest">
+	<mkdir dir="${junit.output.dir}"/>
+	<junit>
+		<test name="hotel.regression.HomePageTests" todir="${junit.output.dir}"/>
+		<classpath refid="SeleniumDemo.classpath"/>
+	</junit>
+</target>
+<target depends="init" name="compile">
+	<javac destdir="bin" includeantruntime="false">
+		<src path="src.main"/>
+		<src path="src.test"/>
+		<classpath refid="SeleniumDemo.classpath"/>
+	</javac>
+<target name="junitreport">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
                 <include name="TEST-*.xml"/>
@@ -129,4 +82,5 @@
             <report format="frames" todir="${junit.output.dir}"/>
         </junitreport>
     </target>
+</target>
 </project>
