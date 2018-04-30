@@ -67,6 +67,7 @@
 	<mkdir dir="${junit.output.dir}"/>
 	<junit fork="yes">
 		<test name="hotel.regression.HomePageTests" />
+		<jvmarg line="-ea"/>
 		<classpath refid="SeleniumDemo.classpath"/>
 	</junit>
 </target>
