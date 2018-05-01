@@ -62,7 +62,7 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
-        <mkdir dir="bin/configkkkk"/>
+        <mkdir dir="bin/config"/>
         <copy includeemptydirs="false" todir="bin/config">
             <fileset dir="config">
                 <exclude name="**/*.java"/>
