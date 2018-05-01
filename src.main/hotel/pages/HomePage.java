@@ -8,11 +8,11 @@ import hotel.utilty.Utilities;
 public class HomePage extends Page{
 	
 	
-	private static final String URL = Utilities.getPropertyValue("config.properties", "BASEURL");	
+	private static final String URL = Utilities.getPropertyValue("config\\config.properties", "BASEURL");	
 	
-	By username = Utilities.createSelector("objects.properties", "EDT_USERNAME_ID");
-	By password = Utilities.createSelector("objects.properties", "EDT_PASSWORD_ID");
-	By login = Utilities.createSelector("objects.properties", "BTN_LOGIN_ID");
+	By username = Utilities.createSelector("config\\objects.properties", "EDT_USERNAME_ID");
+	By password = Utilities.createSelector("config\\objects.properties", "EDT_PASSWORD_ID");
+	By login = Utilities.createSelector("config\\objects.properties", "BTN_LOGIN_ID");
 	
 	public void navigateToPage(String url)
 	{

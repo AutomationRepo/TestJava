@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcel {
 	
-	private static final String filePath = Utilities.getPropertyValue("config.properties", "TEST_DATA");	
+	private static final String filePath = Utilities.getPropertyValue("config\\config.properties", "TEST_DATA");	
 	private FileInputStream ipStream=null;	
 	private XSSFWorkbook wb = null;
 	private XSSFSheet ws = null;

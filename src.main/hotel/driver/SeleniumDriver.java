@@ -24,9 +24,9 @@ public class SeleniumDriver {
 	
 	
 	private static WebDriver _driver = null;
-	private static final String chromeExePath = "usr/bin/chromedriver.exe";
+	private static final String chromeExePath = "lib\\chromedriver.exe";
 	private static final String ieExePath = "lib\\MicrosoftWebDriver.exe";
-	private static final String browserName = Utilities.getPropertyValue("config.properties", "BROWSER");		
+	private static final String browserName = Utilities.getPropertyValue("config\\config.properties", "BROWSER");		
 	
 	public SeleniumDriver(){
 		
