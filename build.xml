@@ -80,7 +80,7 @@
 		<jvmarg line="-ea"/>
 		<classpath>
 			<pathelement location="bin"/>
-		<classpath>		
+		</classpath>		
 		 <classpath refid="SeleniumDemo.classpath"/>
 	</junit>
 </target>
