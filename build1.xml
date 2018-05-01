@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="SeleniumDemo">
+              as the first entry and export the buildfile again. --><project basedir="." default="SeleniumDemo" name="SeleniumDemo">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../eclipse-jee-neon-2-win32-x86_64/eclipse/"/>
     <property name="junit.output.dir" value="Reports"/>
@@ -112,7 +112,7 @@
             <classpath refid="SeleniumDemo.classpath"/>
         </java>
     </target>
-    <target name="SeleniumDemo">
+    <target depends="build" name="SeleniumDemo">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
