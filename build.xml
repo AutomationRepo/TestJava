@@ -50,11 +50,6 @@
         <pathelement location="lib/xml-apis-1.4.01.jar"/>
         <pathelement location="lib/xmlbeans-2.6.0.jar"/>
     </path>
- <path id="config.classpath">
-        <file file="config/log4j.properties"/>
-        <file file="config/config.properties"/>
-        <file file="config/objects.properties"/>
-    </path>
  <target name="init">
  	<mkdir dir="bin"/>
  	<copy includeemptydirs="false" todir="bin">
@@ -69,7 +64,7 @@
         </copy>
         <copy includeemptydirs="false" todir="bin">
     	            <fileset dir="config">
-    	                <exclude name="**/*.java"/>
+    	                <includes name="config/*.properties"/>
     	            </fileset>
     	  </copy>
  </target>
@@ -78,7 +73,6 @@
 	<junit printsummary="withOutAndErr">
 		<test name="hotel.regression.HomePageTests" />				
 		 <classpath refid="SeleniumDemo.classpath"/>
-		  <classpath refid="config.classpath"/>
 	</junit>
 </target>
 <target depends="init" name="compile">
@@ -86,7 +80,6 @@
 		<src path="src.main"/>
 		<src path="src.test"/>
 		<classpath refid="SeleniumDemo.classpath"/>
-		<classpath refid="config.classpath"/>
 	</javac>	
 </target>
 <target name="junitreport">
