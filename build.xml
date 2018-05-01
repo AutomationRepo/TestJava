@@ -78,7 +78,10 @@
 	<junit printsummary="withOutAndErr">
 		<test name="hotel.regression.HomePageTests" />
 		<jvmarg line="-ea"/>
-		<classpath refid="SeleniumDemo.classpath"/>
+		<classpath>
+			<pathelement location="bin"/>
+		<classpath>		
+		 <classpath refid="SeleniumDemo.classpath"/>
 	</junit>
 </target>
 <target name="MyTest">
