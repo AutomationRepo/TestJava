@@ -65,7 +65,6 @@
         </copy>
         <copy includeemptydirs="false" todir="bin/config">
     	            <fileset dir="config">
-    	                <includes name="**/*.properties"/>
     	            </fileset>
     	  </copy>
  </target>
