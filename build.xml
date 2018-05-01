@@ -50,6 +50,11 @@
         <pathelement location="lib/xml-apis-1.4.01.jar"/>
         <pathelement location="lib/xmlbeans-2.6.0.jar"/>
     </path>
+ <path id="config.classpath">
+        <file file="config/log4j.properties"/>
+        <file file="config/config.properties"/>
+        <file file="config/objects.properties"/>
+    </path>
  <target name="init">
  	<mkdir dir="bin"/>
  	<copy includeemptydirs="false" todir="bin">
@@ -68,25 +73,14 @@
     	            </fileset>
     	  </copy>
  </target>
- <target name="clean">
-        <delete dir="bin"/>
-  </target>
-  <target depends="clean" name="cleanall"/>    
-<target depends="compile" name="runTest">
+ <target depends="compile" name="runTest">
 	<echo message="${ant.project.name}: ${ant.file}"/>
 	<junit printsummary="withOutAndErr">
-		<test name="hotel.regression.HomePageTests" />
-		<classpath>
-			<pathelement location="bin"/>
-		</classpath>		
+		<test name="hotel.regression.HomePageTests" />				
 		 <classpath refid="SeleniumDemo.classpath"/>
+		  <classpath refid="config.classpath"/>
 	</junit>
 </target>
-<target name="MyTest">
-        <java classname="MyTest" failonerror="true" fork="yes">
-            <classpath refid="SeleniumDemo.classpath"/>
-        </java>
-  </target>
 <target depends="init" name="compile">
 	<javac destdir="bin" includeantruntime="false" source="${source}" target="${target}">
 		<src path="src.main"/>
