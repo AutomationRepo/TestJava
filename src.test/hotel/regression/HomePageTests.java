@@ -32,7 +32,7 @@ public class HomePageTests {
 	public void loginTest()
 	{
 		String user = objRS.getCellData("TestCases", "TC_1", "UserName");
-		String pwd = objRS.getCellData("TestCases", "TC_1", "UserName");
+		String pwd = objRS.getCellData("TestCases", "TC_1", "Password");
 		String result = objRS.getCellData("ExpectedResult", "TC_1", "ProfileName");
 		objHome.userLogin(user, pwd);		
 		String res = objSearch.getProfileName();
