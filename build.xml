@@ -86,6 +86,7 @@
 		<src path="src.main"/>
 		<src path="src.test"/>
 		<classpath refid="SeleniumDemo.classpath"/>
+		<classpath refid="config.classpath"/>
 	</javac>	
 </target>
 <target name="junitreport">
