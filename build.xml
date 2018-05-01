@@ -74,10 +74,8 @@
   <target depends="clean" name="cleanall"/>    
 <target depends="compile" name="runTest">
 	<echo message="${ant.project.name}: ${ant.file}"/>
-	<mkdir dir="${junit.output.dir}"/>
 	<junit printsummary="withOutAndErr">
 		<test name="hotel.regression.HomePageTests" />
-		<jvmarg line="-ea"/>
 		<classpath>
 			<pathelement location="bin"/>
 		</classpath>		
