@@ -52,6 +52,7 @@
     </path>
  <target name="init">
  	<mkdir dir="bin"/>
+ 	<mkdir dir="bin/config"/>
  	<copy includeemptydirs="false" todir="bin">
             <fileset dir="src.main">
                 <exclude name="**/*.java"/>
@@ -62,9 +63,9 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
-        <copy includeemptydirs="false" todir="bin">
+        <copy includeemptydirs="false" todir="bin/config">
     	            <fileset dir="config">
-    	                <includes name="config/*.properties"/>
+    	                <includes name="**/*.properties"/>
     	            </fileset>
     	  </copy>
  </target>
