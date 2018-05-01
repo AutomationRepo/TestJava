@@ -22,7 +22,7 @@ public class HomePageTests {
 	@Before
 	public void setUP()
 	{	
-		PropertyConfigurator.configure("config\\log4j.properties");
+		PropertyConfigurator.configure(this.getClass().getClassLoader().getResource("config\\log4j.properties"));
 		objHome = new HomePage();
 		objSearch = new SearchHotelPage();
 		objRS = new ReadExcel();			
