@@ -11,17 +11,17 @@ import hotel.utilty.Utilities;
 public class SearchHotelPage extends Page{
 	
 	
-	By profileName = Utilities.createSelector("objects.properties", "EDT_LOGGEDINUSER_CSS");
-	By location = Utilities.createSelector("objects.properties", "EDT_LOCATION_CSS");
-	By hotels = Utilities.createSelector("objects.properties", "EDT_HOTEL_ID");
-	By roomType = Utilities.createSelector("objects.properties", "EDT_ROOMTYPES_NAME");
-	By noOfRooms = Utilities.createSelector("objects.properties", "EDT_NOOFROOMS_NAME");
-	By checkInDate = Utilities.createSelector("objects.properties", "EDT_CHECKINDATE_ID");
-	By checkOutDate = Utilities.createSelector("objects.properties", "EDT_CHECKOUTDATE_ID");
-	By AdultsPerRoom = Utilities.createSelector("objects.properties", "EDT_ADULTS_CSS");
-	By childrenPerRoom = Utilities.createSelector("objects.properties", "EDT_CHILDREN_ID");
-	By search = Utilities.createSelector("objects.properties", "BTN_SEARCH_NAME");
-	By reset = Utilities.createSelector("objects.properties", "BTN_RESET_ID");
+	By profileName = Utilities.createSelector("config\\objects.properties", "EDT_LOGGEDINUSER_CSS");
+	By location = Utilities.createSelector("config\\objects.properties", "EDT_LOCATION_CSS");
+	By hotels = Utilities.createSelector("config\\objects.properties", "EDT_HOTEL_ID");
+	By roomType = Utilities.createSelector("config\\objects.properties", "EDT_ROOMTYPES_NAME");
+	By noOfRooms = Utilities.createSelector("config\\objects.properties", "EDT_NOOFROOMS_NAME");
+	By checkInDate = Utilities.createSelector("config\\objects.properties", "EDT_CHECKINDATE_ID");
+	By checkOutDate = Utilities.createSelector("config\\objects.properties", "EDT_CHECKOUTDATE_ID");
+	By AdultsPerRoom = Utilities.createSelector("config\\objects.properties", "EDT_ADULTS_CSS");
+	By childrenPerRoom = Utilities.createSelector("config\\objects.properties", "EDT_CHILDREN_ID");
+	By search = Utilities.createSelector("config\\objects.properties", "BTN_SEARCH_NAME");
+	By reset = Utilities.createSelector("config\\objects.properties", "BTN_RESET_ID");
 	
 	public String getProfileName()
 	{

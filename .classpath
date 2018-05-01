@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src.main"/>
 	<classpathentry kind="src" path="src.test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_112"/>
 	<classpathentry kind="lib" path="D:/Study_Material/Sel_Pyth/Workspace/SeleniumDemo/lib/cglib-nodep-3.2.4.jar"/>
 	<classpathentry kind="lib" path="D:/Study_Material/Sel_Pyth/Workspace/SeleniumDemo/lib/client-combined-3.0.1-nodeps.jar"/>
 	<classpathentry kind="lib" path="D:/Study_Material/Sel_Pyth/Workspace/SeleniumDemo/lib/commons-codec-1.10.jar"/>
