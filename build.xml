@@ -77,7 +77,7 @@
 	</junit>
 </target>
 <target depends="init" name="compile">
-	<javac destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+	<javac destdir="bin" includeantruntime="false">
 		<src path="src.main"/>
 		<src path="src.test"/>
 		<classpath refid="SeleniumDemo.classpath"/>
